@@ -1,29 +1,19 @@
 <!-- eslint-disable no-tabs -->
 <template>
-	<div id="event-handling">
-		<p>{{ message }}</p>
-		<button v-on:click="reverseMessage">Reverse Message</button>
-	</div>
+<div>
+	<testCompo test="내가 주는 값 받아">
+		1234
+	</testCompo>
+</div>
 </template>
 <script lag="ts">
 import { defineComponent } from 'vue'
-
+import testCompo from 'components/testCompo.vue'
 export default defineComponent({
   name: 'TestVue',
-
-  data () {
-    return {
-      message: 'Hello Vue.js!'
-    }
-  },
-  methods: {
-    reverseMessage () {
-      this.message = this.message
-        .split('')
-        .reverse()
-        .join('')
-    }
+  components: { testCompo },
+  setup () {
+    //
   }
-
 })
 </script>
