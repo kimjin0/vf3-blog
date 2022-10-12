@@ -2,9 +2,15 @@
     <div>
         text : {{ name }}
     </div>
+    <div>
+        upper : {{ name.toUpperCase() }}
+    </div>
+    <div>
+        computed : {{ upper }}
+    </div>
 </template>
 <script lag="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, computed } from 'vue'
 
 export default defineComponent({
   name: 'testCompo',
@@ -14,7 +20,12 @@ export default defineComponent({
       default: () => 'default'
     }
   },
-  setup () {
+  setup (props) {
+    console.log(props)
+    const upper = computed(
+      () => props.name.toUpperCase()
+    )
+    return { upper }
     //
   }
 })
