@@ -1,6 +1,7 @@
 <template>
     <div>
         slot out {{  test }}
+        title {{ title }}
         <slot></slot>
     </div>
 </template>
@@ -9,7 +10,7 @@ import { defineComponent } from 'vue'
 
 export default defineComponent({
   name: 'testCompo',
-  props: ['test'],
+  props: ['test', 'title'],
   setup () {
     //
   }
