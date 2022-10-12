@@ -6,31 +6,51 @@
             name : {{  addedText }}
         </q-card-section>
         <q-card-section>
-            <q-input v-model="name"></q-input>
+            <q-input v-model="text"></q-input>
         </q-card-section>
         <q-card-actions>
             <q-btn flat label="add" @click="add"></q-btn>
         </q-card-actions>
+        <q-card-section>
+            compo...
+            <TestCompo :name="text" />
+        </q-card-section>
     </q-card>
 </q-page>
 </template>
 <script lag="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, ref, computed } from 'vue'
+import TestCompo from 'components/testCompo.vue'
 export default defineComponent({
   name: 'TestVue',
-  data () {
+  components: { TestCompo },
+  // Option API
+  //   data () {
+  //     return {
+  //       name: 'kimjin0'
+  //     }
+  //   },
+  //   computed: {
+  //     addedText () {
+  //       return this.name + ' ^^'
+  //     }
+  //   },
+  //   methods: {
+  //     add () {
+  //       this.name += ' add'
+  //     }
+  //   }
+  setup () {
+    const text = ref('kimjin0')
+    // const addedText = computed<string>(() => text.value + ' ^^')
+    const addedText = computed(() => text.value + ' ^^')
+    const add = () => {
+      text.value += ' add'
+    }
     return {
-      name: 'kimjin0'
-    }
-  },
-  computed: {
-    addedText () {
-      return this.name + ' ^^'
-    }
-  },
-  methods: {
-    add () {
-      this.name += ' add'
+      text,
+      addedText,
+      add
     }
   }
 })

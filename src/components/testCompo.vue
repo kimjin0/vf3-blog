@@ -1,8 +1,6 @@
 <template>
     <div>
-        slot out {{  test }}
-        title {{ title }}
-        <slot></slot>
+        text : {{ name }}
     </div>
 </template>
 <script lag="ts">
@@ -10,7 +8,12 @@ import { defineComponent } from 'vue'
 
 export default defineComponent({
   name: 'testCompo',
-  props: ['test', 'title'],
+  props: {
+    name: {
+      type: String,
+      default: () => 'default'
+    }
+  },
   setup () {
     //
   }
