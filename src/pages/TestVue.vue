@@ -42,8 +42,10 @@ export default defineComponent({
   //   }
   setup () {
     const text = ref('kimjin0')
-    // const addedText = computed<string>(() => text.value + ' ^^')
+    // computed 축약
     const addedText = computed(() => text.value + ' ^^')
+
+    // methods 축약
     const add = () => {
       text.value += ' add'
     }
