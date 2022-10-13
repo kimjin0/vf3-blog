@@ -1,19 +1,23 @@
 <template>
     <div>
-        text : {{ name }}
+        *text : {{ name }}
     </div>
     <div>
-        upper : {{ name.toUpperCase() }}
+        *upper : {{ name.toUpperCase() }}
     </div>
     <div>
-        computed : {{ upper }}
+        *computed : {{ upper }}
+    </div>
+    <div>
+        *deep : <TestDeep />
     </div>
 </template>
 <script lag="ts">
 import { defineComponent, computed } from 'vue'
-
+import TestDeep from 'components/TestDeep.vue'
 export default defineComponent({
   name: 'testCompo',
+  components: { TestDeep },
   props: {
     name: {
       type: String,

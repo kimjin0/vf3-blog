@@ -19,8 +19,8 @@
 </q-page>
 </template>
 <script lag="ts">
-import { defineComponent, ref, computed } from 'vue'
-import TestCompo from 'components/testCompo.vue'
+import { defineComponent, ref, computed, provide } from 'vue'
+import TestCompo from 'components/TestCompo.vue'
 export default defineComponent({
   name: 'TestVue',
   components: { TestCompo },
@@ -49,6 +49,9 @@ export default defineComponent({
     const add = () => {
       text.value += ' add'
     }
+
+    provide('name', text)
+
     return {
       text,
       addedText,
