@@ -23,7 +23,9 @@ const justifys = [
         <q-card-select>
             {{ justify }}, {{  justifys }}
         </q-card-select>
-        <div class="row" :class="justify">
+        <div class="row"
+            :class="justify"
+        >
             <div v-for="i in 7" :key="i">
                 <q-avatar
                     size="100px"
