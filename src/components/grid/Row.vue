@@ -18,7 +18,7 @@ const rowClass = computed(() => [justify.value, item.value].join(' '))
 <template>
     <q-card>
         <q-toolbar>
-            <!-- <q-toobar-title>row</q-toobar-title> -->
+            <q-toolbar-title>row</q-toolbar-title>
             <q-select
                 v-model="justify"
                 :options="justifys"
