@@ -11,7 +11,7 @@
 		"prefix": "vue3-script",
 		"body": [
 			"<script setup lag=\"ts\">",
-            "",
+            "\timport {} from 'vue'"
             "</script>",
             "",
 			"<template>",
