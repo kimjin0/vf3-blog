@@ -1,7 +1,9 @@
 {
+    "semi": false,
+    "brackerSpacing": true,
     "singleQuote": true,
-    "tabWidth": 2,
-    "quoteProps": "as-needed",
-    "arrowParens": "always",
-    "printWidth": 200
-}
+    "useTabs": false,
+    "trailingComma": "none",
+    "printWidth": 80
+  }
+  
